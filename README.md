@@ -23,6 +23,13 @@ npx serve .
 
 You can also open `aspireify/index.html` or `agents/index.html` straight from disk; the speaker view works best when served.
 
+## Editing the slides (people and agents)
+
+- `AGENTS.md` – how slides are built and the rules to follow; coding agents pick this up automatically (`CLAUDE.md` and `.github/copilot-instructions.md` point to it)
+- `docs/design-guidelines.md` – Aspire brand colors, type scale, layout and voice
+- `docs/brand/tokens.json` – Aspire design system tokens
+- `templates/index.html` – a runnable deck with one example of every slide layout; copy a section to start a new slide
+
 ## Layout
 
 - `index.html` – simple landing page linking both decks
