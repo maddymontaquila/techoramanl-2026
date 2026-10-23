@@ -22,7 +22,6 @@ Install the [Aspire CLI](https://aspire.dev/get-started/install-cli/) 13.6 or la
 and Node.js 20.19+, 22.13+, or 24+. From the repository root:
 
 ```sh
-npm ci
 aspire run
 ```
 
