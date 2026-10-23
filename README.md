@@ -9,6 +9,13 @@ Maddy Montaquila and Tommaso Stocchi's Techorama 2026 sessions.
 
 - `slides/` – both decks as reveal.js presentations, plus templates and design guidelines. See `slides/README.md`.
 
+## Code repositories
+
+The sessions use these repositories for the code demos:
+
+- [techorama-aspireify-app](https://github.com/tommasodotNET/techorama-aspireify-app)
+- [ski-resort-demo](https://github.com/tommasodotNET/ski-resort-demo)
+
 ## Run the slides with Aspire
 
 Install the [Aspire CLI](https://aspire.dev/get-started/install-cli/) 13.6 or later
