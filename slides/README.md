@@ -9,6 +9,10 @@ Slides for Maddy Montaquila and Tommaso Stocchi's Techorama 2026 sessions, built
 
 Everything is vendored (reveal.js, Poppins and Fira Code fonts, Lucide icons inlined as SVG), so the decks work offline.
 
+Both session covers use the background, logo and centered title/speaker layout from the first slide of `Techorama 2026 Template.potx`, adapted to HTML with the vendored Poppins font. The extracted artwork lives in `shared/img/techorama-2026-*.png`.
+
+Each deck ends with its own feedback QR code on the thank-you slide. `shared/img/aspireify-feedback-qr.png` and `shared/img/agents-feedback-qr.png` are unchanged copies of the corresponding `*-qr-code.png` files in the repository root, bundled here so serving only `slides/` still works.
+
 ## Presenting
 
 From the repository root, start the Aspire host:

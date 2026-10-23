@@ -2,6 +2,8 @@
 
 These decks use the **Aspire Design System** (the brand kit behind aspire.dev and the official Aspire decks), applied to a dark 1920 × 1080 slide. The exact token values are in `docs/brand/tokens.json`; this page is the subset the slides use, plus the layout conventions both decks follow.
 
+The two session covers are the exception: they use the first slide of the Techorama 2026 speaker template, with its original medieval background and centered event logo, title and speaker names. Keep the artwork in `shared/img/techorama-2026-*.png` and use the vendored Poppins font for editable HTML text. No Aspire logo or hero artwork is added to these covers; the `title` gallery example remains an Aspire-branded alternative.
+
 ## Look and feel
 
 Calm, premium and technical. A confident purple core on dark ink backgrounds, soft hairline cards, and generous space. The purple system leads; gradients and accent colors are for highlights only, never for whole slides of content.
@@ -111,6 +113,8 @@ Nothing smaller than 24px. Emphasize with weight or color, not a new size.
 | `text-plus-screenshot` | Three icon rows beside a dashboard screenshot |
 | `resources` | Two-column label/link grid |
 | `closing` | Thank you, handles, rate-the-session line |
+
+The session decks adapt `closing` to a two-column layout: thank-you text and handles on the left, the matching session feedback QR image and scan prompt on the right. Keep each QR image uncropped and unobstructed; do not swap the Aspireify and agents feedback codes.
 
 ## Voice
 
