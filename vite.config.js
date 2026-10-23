@@ -4,6 +4,14 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   root: 'slides',
   base: './',
+  appType: 'mpa',
+  server: {
+    port: Number(process.env.PORT ?? '5173'),
+    strictPort: true,
+    fs: {
+      allow: ['.']
+    }
+  },
   build: {
     outDir: '../dist',
     emptyOutDir: true,

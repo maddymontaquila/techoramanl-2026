@@ -15,7 +15,7 @@ The title slides use DS Wallau extracted from the template and the matching full
 
 ## Presenting
 
-Use Node.js 20.19+ or 22.12+ (including newer supported releases). Run commands from the **repository root**, not this folder:
+Use Node.js 20.19+, 22.13+, or 24+. Run commands from the **repository root**, not this folder:
 
 ```sh
 npm ci
@@ -23,6 +23,12 @@ npm run dev
 ```
 
 Open the URL printed by Vite and choose a deck. Editing a source file updates the development preview.
+
+Alternatively, run `aspire run` after `npm ci` to open the **Aspireify session**
+and **Agent session** links in the Aspire dashboard. Aspire manages a separate
+Vite server and port for each deck using the same root dependencies and Vite
+configuration. See the root `README.md` for Aspire prerequisites and background
+commands. `npm run aspire:build` checks the AppHost separately from the slide build.
 
 Before the talk:
 

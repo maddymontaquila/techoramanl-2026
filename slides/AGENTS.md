@@ -17,6 +17,8 @@ Instructions for any coding agent (Copilot, Claude Code, Codex, Cursor…) editi
 
 The repository root owns the npm manifest, lockfile and Vite configuration. Build tooling and npm dependencies are allowed. Use the existing Vite multi-page build rather than copying library distributions into `shared/` or introducing a second build system. Keep dependency changes intentional and commit the lockfile with them.
 
+The optional TypeScript AppHost (`../apphost.mts`) hosts the two decks as separate Vite resources through `npm run slides:start`. Keep Aspire's `PORT` handling in the shared root `vite.config.js`; do not add a second Vite config. `npm run build` builds the decks without Aspire; `npm run aspire:build` lints and type-checks the AppHost after `aspire restore`.
+
 The **built decks must present without an internet connection**. Bundle runtime dependencies, fonts and images; do not depend on a CDN at presentation time. External resource links are fine. `npm run build` creates `dist/`, which can be served locally or deployed to a static host, including a repository subpath. Do not edit or commit generated `dist/` files.
 
 ## How a slide is built
