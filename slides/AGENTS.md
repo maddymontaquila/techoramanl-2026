@@ -14,7 +14,7 @@ Instructions for any coding agent (Copilot, Claude Code, Codex, Cursor…) editi
 | `shared/` | reveal.js 5.1.0, fonts, images and `deck.css`, shared by every deck |
 | `index.html` | Landing page that links both decks |
 
-Everything is vendored. Do not add CDN links, npm dependencies or a build step; the decks must keep working offline on conference wifi.
+Everything in the decks is vendored. Do not add CDN links, slide npm dependencies or a slide build step; the decks must keep working offline on conference wifi. The repository-root Aspire/Vite tooling only hosts these static files.
 
 ## How a slide is built
 
@@ -55,10 +55,12 @@ Rules:
 ## Checking your work
 
 ```sh
-npx serve .
+aspire start --isolated --apphost apphost.mts
+aspire wait aspireify-session --apphost apphost.mts
+aspire wait agent-session --apphost apphost.mts
 ```
 
-Run that from the `slides/` folder, open the deck, step through every slide you touched, and check that nothing overflows the 1920 × 1080 frame or overlaps the logo. Press `Esc` for the overview grid.
+Run those commands from the repository root after installing the hosting dependencies (see the root `README.md`). Open **Aspireify session** on `aspireify-session` or **Agent session** on `agent-session` in the Aspire dashboard. Step through every slide you touched and check that nothing overflows the 1920 × 1080 frame or overlaps the logo. Press `Esc` for the overview grid. Stop your host afterward with `aspire stop --apphost apphost.mts`.
 
 ## Where the decks come from
 

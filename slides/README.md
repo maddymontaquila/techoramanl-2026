@@ -11,11 +11,18 @@ Everything is vendored (reveal.js, Poppins and Fira Code fonts, Lucide icons inl
 
 ## Presenting
 
-From this `slides/` folder, serve it and open a deck:
+From the repository root, start the Aspire host:
 
 ```sh
-npx serve .
+npm ci
+aspire run
 ```
+
+Open **Aspireify session** on `aspireify-session` or **Agent session** on
+`agent-session` in the dashboard. Each link opens its deck directly.
+Aspire manages a separate Vite server and port for each resource. See the root `README.md` for
+prerequisites and background-run commands. Hosting dependencies live at the
+repository root; the decks themselves remain static and require no build step.
 
 - `S` opens the speaker view (notes, timer, next slide)
 - `F` goes full screen, `Esc` shows the slide overview
