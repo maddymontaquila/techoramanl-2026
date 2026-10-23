@@ -1,6 +1,6 @@
-# Agent guide: Techorama 2026 Aspire decks
+# Agent guide: Techorama 2026 Aspire slides
 
-Instructions for any coding agent (Copilot, Claude Code, Codex, Cursor…) editing the slides in this repo. Read this file and `docs/design-guidelines.md` before changing a slide, and start new slides from `templates/index.html`.
+Instructions for any coding agent (Copilot, Claude Code, Codex, Cursor…) editing the slides in this `slides/` folder. They apply only to the slides, not to the code samples elsewhere in the repo. Read this file and `docs/design-guidelines.md` before changing a slide, and start new slides from `templates/index.html`. All paths below are relative to `slides/`.
 
 ## Repo layout
 
@@ -58,7 +58,7 @@ Rules:
 npx serve .
 ```
 
-Open the deck, step through every slide you touched, and check that nothing overflows the 1920 × 1080 frame or overlaps the logo. Press `Esc` for the overview grid.
+Run that from the `slides/` folder, open the deck, step through every slide you touched, and check that nothing overflows the 1920 × 1080 frame or overlaps the logo. Press `Esc` for the overview grid.
 
 ## Where the decks come from
 
