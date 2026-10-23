@@ -1,0 +1,13 @@
+DS Wallau
+Copyright (c) 2012 by Typographer Mediengestaltung. All rights reserved.
+Design: Prof. Rudolf Koch (1925-1930)
+http://www.steffmann.de
+
+Source: embedded DS Wallau regular font in Techorama 2026 Template.potx,
+converted from EOT to WOFF2 for the conference title slides.
+
+The font's embedded license notice reads "for private use only".
+The deck owner confirmed separate permission covering conference use and
+public web embedding. That permission is not a general redistribution license.
+DS Wallau is not covered by the repository's license; obtain appropriate
+permission before reusing this font outside these conference decks.

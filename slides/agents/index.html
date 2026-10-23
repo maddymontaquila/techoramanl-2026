@@ -4,49 +4,48 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Use agents to build agents</title>
-<link rel="stylesheet" href="../shared/reveal/reveal.css">
-<link rel="stylesheet" href="../shared/fonts/fonts.css">
-<link rel="stylesheet" href="../shared/deck.css">
 </head>
 <body>
 <div class="reveal">
 <div class="slides">
-<section id="cover" data-transition="fade">
-<div class="slide" style="background:linear-gradient(160deg,#171b31 0%,#1b2140 55%,#213051 100%);color:#f6f3ff;font-family:'Poppins', Arial, sans-serif;padding:208px 128px 128px;display:flex;flex-direction:column;justify-content:center;gap:40px"><div class="ring" style="position:absolute;left:1000px;top:330px;width:1100px;height:440px;background:transparent;border:1px solid rgba(195,173,255,0.28);transform:rotate(-10deg);border-radius:50%"></div>
-<div class="ring" style="position:absolute;left:1150px;top:390px;width:820px;height:330px;background:transparent;border:1px solid rgba(195,173,255,0.28);transform:rotate(12deg);border-radius:50%"></div>
-<img src="../shared/img/aspire-hero.png" alt="" style="position:absolute;left:1180px;top:280px;width:640px;height:492px;object-fit:contain">
-<img src="../shared/img/aspire-logo-light-horizontal.png" alt="Aspire" style="position:absolute;left:128px;top:80px;width:226px;height:56px;object-fit:contain">
-<p style="font-family:'Fira Code', 'Courier New', monospace;font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#c3adff;width:1000px">Techorama 2026 · Room 12 · Wed 28 Oct</p>
-<div style="display:flex;flex-direction:column;gap:20px">
-<h1 style="font-size:120px;font-weight:600;letter-spacing:-4px;line-height:1.02;width:1040px">Use agents to build agents</h1>
-<p style="font-size:40px;font-weight:500;line-height:1.3;color:#c3adff;width:1000px">with Aspire + Microsoft Agent Framework</p>
+<section id="techorama" data-transition="fade">
+<div class="slide techorama-opener">
+<img class="techorama-opener-art" src="../shared/img/techorama-opener.png" alt="Hear ye, hear ye. Techorama Medieval Edition.">
 </div>
-<div style="display:flex;flex-direction:column;gap:8px;width:1000px">
-<p style="font-size:32px;line-height:1.5;color:#cdc7e8"><b>Maddy Montaquila</b> · Principal PM, Aspire @ Microsoft</p>
-<p style="font-size:32px;line-height:1.5;color:#cdc7e8"><b>Tommaso Stocchi</b> · Cloud Solution Architect, Microsoft</p>
+<aside class="notes">Conference opener. Leave this up while the audience arrives, then advance to the session title.</aside>
+</section>
+
+<section id="cover" data-transition="fade">
+<div class="slide techorama-title">
+<img class="techorama-logo" src="../shared/img/techorama-logo.png" alt="Techorama 2026 Medieval Edition">
+<div class="techorama-title-content">
+<h1>Use agents to build agents</h1>
+<p class="techorama-subtitle">with Aspire + Microsoft Agent Framework</p>
+<p class="techorama-presenters">Maddy Montaquila · Tommaso Stocchi</p>
+<p class="techorama-session">Room 12 · Wed 28 Oct 2026</p>
 </div>
 </div>
 <aside class="notes">Welcome! This one is the deeper, agent-focused follow-up to yesterday’s Aspireify session. Two halves: Use AI — letting a coding agent build and debug with Aspire giving it eyes. Build AI — an agentic app with Microsoft Agent Framework, orchestrated by Aspire. Then a short Ship it section on deploying the same app model. Rough timing: ~6 min setup, ~8 min on the agent inner loop and skills, ~13 min demo one, ~6 min on Agent Framework, ~13 min demo two, ~6 min ship it, ~3 min wrap.</aside>
 </section>
 
 <section id="speakers" data-transition="fade">
-<div class="slide" style="background:linear-gradient(160deg,#171b31 0%,#1b2140 55%,#213051 100%);color:#f6f3ff;font-family:'Poppins', Arial, sans-serif;padding:208px 128px 128px;display:flex;flex-direction:column;gap:64px"><img src="../shared/img/aspire-logo-light-horizontal.png" alt="Aspire" style="position:absolute;left:128px;top:80px;width:226px;height:56px;object-fit:contain">
+<div class="slide" style="background:linear-gradient(160deg,#171b31 0%,#1b2140 55%,#213051 100%);color:#f6f3ff;font-family:'Poppins', Arial, sans-serif;padding:208px 128px 128px;display:flex;flex-direction:column;gap:48px"><img src="../shared/img/aspire-logo-light-horizontal.png" alt="Aspire" style="position:absolute;left:128px;top:80px;width:226px;height:56px;object-fit:contain">
 <h2 style="font-size:72px;font-weight:600;letter-spacing:-2px;line-height:1.08">Who we are</h2>
-<div style="display:flex;gap:48px">
-<div style="flex:1;display:flex;align-items:center;gap:40px;background:rgba(255,255,255,0.04);border:1px solid rgba(195,173,255,0.22);border-radius:32px;padding:56px">
-<img src="../shared/img/maddy.png" alt="Maddy Montaquila" style="width:180px;height:180px;object-fit:cover;border-radius:50%;border:2px solid rgba(195,173,255,0.4)">
-<div style="flex:1;display:flex;flex-direction:column;gap:8px">
-<h3 style="font-size:44px;font-weight:600;line-height:1.15">Maddy Montaquila</h3>
-<p style="font-size:28px;line-height:1.4;color:#cdc7e8">Principal PM, Aspire @ Microsoft</p>
-<p style="font-family:'Fira Code', 'Courier New', monospace;font-size:26px;color:#c3adff">@maddymontaquila</p>
+<div class="speaker-grid">
+<div class="speaker-profile">
+<img class="speaker-portrait" src="../shared/img/maddy.png" alt="Maddy Montaquila">
+<div class="speaker-bio">
+<h3>Maddy Montaquila</h3>
+<p>Principal PM, Aspire<br>@ Microsoft</p>
+<p class="speaker-handle">@maddymontaquila</p>
 </div>
 </div>
-<div style="flex:1;display:flex;align-items:center;gap:40px;background:rgba(255,255,255,0.04);border:1px solid rgba(195,173,255,0.22);border-radius:32px;padding:56px">
-<img src="../shared/img/tommaso.png" alt="Tommaso Stocchi" style="width:180px;height:180px;object-fit:cover;border-radius:50%;border:2px solid rgba(195,173,255,0.4)">
-<div style="flex:1;display:flex;flex-direction:column;gap:8px">
-<h3 style="font-size:44px;font-weight:600;line-height:1.15">Tommaso Stocchi</h3>
-<p style="font-size:28px;line-height:1.4;color:#cdc7e8">Cloud Solution Architect, Microsoft</p>
-<p style="font-family:'Fira Code', 'Courier New', monospace;font-size:26px;color:#c3adff">@tommasodotNET</p>
+<div class="speaker-profile">
+<img class="speaker-portrait" src="../shared/img/tommaso.png" alt="Tommaso Stocchi">
+<div class="speaker-bio">
+<h3>Tommaso Stocchi</h3>
+<p>Cloud Solution Architect,<br>Microsoft</p>
+<p class="speaker-handle">@tommasodotNET</p>
 </div>
 </div>
 </div>
@@ -75,12 +74,12 @@
 <h3 style="font-size:64px;font-weight:600;letter-spacing:-2px;line-height:1.1;color:#c3adff">Use AI</h3>
 <p style="font-size:30px;line-height:1.5;color:#cdc7e8">Coding agents that help you do your job faster and better.</p>
 </div>
-<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:rgba(255,255,255,0.04);border:1px solid rgba(195,173,255,0.22);border-radius:32px;padding:48px 44px">
+<div class="fragment" data-fragment-index="0" style="flex:1;display:flex;flex-direction:column;gap:20px;background:rgba(255,255,255,0.04);border:1px solid rgba(195,173,255,0.22);border-radius:32px;padding:48px 44px">
 <p style="font-family:'Fira Code', 'Courier New', monospace;font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#9c97b8">Demo 2</p>
 <h3 style="font-size:64px;font-weight:600;letter-spacing:-2px;line-height:1.1;color:#c3adff">Build AI</h3>
 <p style="font-size:30px;line-height:1.5;color:#cdc7e8">Agents and AI-powered experiences inside the apps you ship.</p>
 </div>
-<div style="flex:1;display:flex;flex-direction:column;gap:20px;background:#512bd4;border:1px solid #7455dd;border-radius:32px;padding:48px 44px">
+<div class="fragment" data-fragment-index="1" style="flex:1;display:flex;flex-direction:column;gap:20px;background:#512bd4;border:1px solid #7455dd;border-radius:32px;padding:48px 44px">
 <p style="font-family:'Fira Code', 'Courier New', monospace;font-size:24px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#dcd5f6">The glue</p>
 <h3 style="font-size:64px;font-weight:600;letter-spacing:-2px;line-height:1.1;color:#ffffff">Build <i>for</i> AI</h3>
 <p style="font-size:30px;line-height:1.5;color:#f6f3ff">The inner loop is now agentic. Dev tools need to meet us there.</p>
@@ -181,34 +180,34 @@
 <h3 style="font-size:32px;font-weight:600;line-height:1.2;color:#c3adff">Read the AppHost</h3>
 <p style="font-size:24px;line-height:1.45;color:#cdc7e8">Understand the topology: services, resources, references</p>
 </div>
-<svg aria-hidden="true" viewBox="0 0 48 24" style="flex:none;width:48px;height:24px"><path d="M0 7.2H28.8V0L48 12 28.8 24V16.8H0z" fill="#7455dd"/></svg>
-<div style="width:269px;height:420px;display:flex;flex-direction:column;gap:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(195,173,255,0.22);border-radius:28px;padding:32px">
+<svg class="fragment" data-fragment-index="0" aria-hidden="true" viewBox="0 0 48 24" style="flex:none;width:48px;height:24px"><path d="M0 7.2H28.8V0L48 12 28.8 24V16.8H0z" fill="#7455dd"/></svg>
+<div class="fragment" data-fragment-index="0" style="width:269px;height:420px;display:flex;flex-direction:column;gap:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(195,173,255,0.22);border-radius:28px;padding:32px">
 <div style="width:56px;height:56px;border-radius:50%;background:rgba(195,173,255,0.16);display:flex;align-items:center;justify-content:center"><p style="font-size:26px;font-weight:600;color:#c3adff">2</p></div>
 <h3 style="font-size:32px;font-weight:600;line-height:1.2;color:#c3adff">Change code</h3>
 <p style="font-size:24px;line-height:1.45;color:#cdc7e8">Edit code or add a resource or integration</p>
 </div>
-<svg aria-hidden="true" viewBox="0 0 48 24" style="flex:none;width:48px;height:24px"><path d="M0 7.2H28.8V0L48 12 28.8 24V16.8H0z" fill="#7455dd"/></svg>
-<div style="width:269px;height:420px;display:flex;flex-direction:column;gap:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(195,173,255,0.22);border-radius:28px;padding:32px">
+<svg class="fragment" data-fragment-index="1" aria-hidden="true" viewBox="0 0 48 24" style="flex:none;width:48px;height:24px"><path d="M0 7.2H28.8V0L48 12 28.8 24V16.8H0z" fill="#7455dd"/></svg>
+<div class="fragment" data-fragment-index="1" style="width:269px;height:420px;display:flex;flex-direction:column;gap:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(195,173,255,0.22);border-radius:28px;padding:32px">
 <div style="width:56px;height:56px;border-radius:50%;background:rgba(195,173,255,0.16);display:flex;align-items:center;justify-content:center"><p style="font-size:26px;font-weight:600;color:#c3adff">3</p></div>
-<h3 style="font-family:'Fira Code', 'Courier New', monospace;font-size:30px;font-weight:600;line-height:1.2;color:#c3adff">aspire start</h3>
+<h3 style="font-family:'Fira Code', 'Courier New', monospace;font-size:28px;font-weight:600;line-height:1.2;color:#c3adff;white-space:nowrap">aspire start</h3>
 <p style="font-size:24px;line-height:1.45;color:#cdc7e8">Run and track the full stack with one command</p>
 </div>
-<svg aria-hidden="true" viewBox="0 0 48 24" style="flex:none;width:48px;height:24px"><path d="M0 7.2H28.8V0L48 12 28.8 24V16.8H0z" fill="#7455dd"/></svg>
-<div style="width:269px;height:420px;display:flex;flex-direction:column;gap:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(195,173,255,0.22);border-radius:28px;padding:32px">
+<svg class="fragment" data-fragment-index="2" aria-hidden="true" viewBox="0 0 48 24" style="flex:none;width:48px;height:24px"><path d="M0 7.2H28.8V0L48 12 28.8 24V16.8H0z" fill="#7455dd"/></svg>
+<div class="fragment" data-fragment-index="2" style="width:269px;height:420px;display:flex;flex-direction:column;gap:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(195,173,255,0.22);border-radius:28px;padding:32px">
 <div style="width:56px;height:56px;border-radius:50%;background:rgba(195,173,255,0.16);display:flex;align-items:center;justify-content:center"><p style="font-size:26px;font-weight:600;color:#c3adff">4</p></div>
 <h3 style="font-size:32px;font-weight:600;line-height:1.2;color:#c3adff">Inspect</h3>
 <p style="font-size:24px;line-height:1.45;color:#cdc7e8">Logs, traces and health straight from the CLI</p>
 </div>
-<svg aria-hidden="true" viewBox="0 0 48 24" style="flex:none;width:48px;height:24px"><path d="M0 7.2H28.8V0L48 12 28.8 24V16.8H0z" fill="#7455dd"/></svg>
-<div style="width:269px;height:420px;display:flex;flex-direction:column;gap:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(195,173,255,0.22);border-radius:28px;padding:32px">
+<svg class="fragment" data-fragment-index="3" aria-hidden="true" viewBox="0 0 48 24" style="flex:none;width:48px;height:24px"><path d="M0 7.2H28.8V0L48 12 28.8 24V16.8H0z" fill="#7455dd"/></svg>
+<div class="fragment" data-fragment-index="3" style="width:269px;height:420px;display:flex;flex-direction:column;gap:16px;background:rgba(255,255,255,0.04);border:1px solid rgba(195,173,255,0.22);border-radius:28px;padding:32px">
 <div style="width:56px;height:56px;border-radius:50%;background:rgba(195,173,255,0.16);display:flex;align-items:center;justify-content:center"><p style="font-size:26px;font-weight:600;color:#c3adff">5</p></div>
 <h3 style="font-size:32px;font-weight:600;line-height:1.2;color:#c3adff">Fix and verify</h3>
 <p style="font-size:24px;line-height:1.45;color:#cdc7e8">Confirm the fix in telemetry, not screenshots</p>
 </div>
 </div>
-<svg aria-hidden="true" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px;pointer-events:none"><polyline points="1658,836 1658,884 611,884" fill="none" stroke="#7455dd" stroke-width="3" stroke-linejoin="round"/></svg>
-<svg aria-hidden="true" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px;pointer-events:none"><defs><marker id="m41442" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5 0 10z" fill="#7455dd"/></marker></defs><polyline points="611,884 611,842" fill="none" stroke="#7455dd" stroke-width="3" stroke-linejoin="round" marker-end="url(#m41442)"/></svg>
-<p style="position:absolute;left:660px;top:896px;width:960px;font-size:24px;color:#c3adff;text-align:center">Back to step 2 — repeat until the stack is healthy</p>
+<svg class="fragment" data-fragment-index="4" aria-hidden="true" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px;pointer-events:none"><polyline points="1658,836 1658,884 611,884" fill="none" stroke="#7455dd" stroke-width="3" stroke-linejoin="round"/></svg>
+<svg class="fragment" data-fragment-index="4" aria-hidden="true" viewBox="0 0 1920 1080" style="position:absolute;left:0;top:0;width:1920px;height:1080px;pointer-events:none"><defs><marker id="m41442" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5 0 10z" fill="#7455dd"/></marker></defs><polyline points="611,884 611,842" fill="none" stroke="#7455dd" stroke-width="3" stroke-linejoin="round" marker-end="url(#m41442)"/></svg>
+<p class="fragment" data-fragment-index="4" style="position:absolute;left:660px;top:896px;width:960px;font-size:24px;color:#c3adff;text-align:center">Back to step 2 — repeat until the stack is healthy</p>
 </div>
 <aside class="notes">Tommaso’s slide. This is what a coding agent actually does with Aspire: it reads the AppHost to learn the topology, makes a change, runs everything with aspire start, inspects logs, traces and health from the CLI, and verifies the fix in telemetry — then loops from step 2 until the stack is healthy. The shift is from guessing (screenshots, pasted logs) to observing.</aside>
 </section>
@@ -350,7 +349,11 @@
 </section>
 
 <section id="together" data-transition="fade">
-<div class="slide" style="background:linear-gradient(160deg,#171b31 0%,#1b2140 55%,#213051 100%);color:#f6f3ff;font-family:'Poppins', Arial, sans-serif;padding:208px 128px 128px;display:flex;flex-direction:column;gap:56px"><img src="../shared/img/dashboard-traces-dark.png" alt="Aspire dashboard showing distributed traces across services" style="position:absolute;left:952px;top:344px;width:840px;height:525px;object-fit:cover;border-radius:24px;border:1px solid rgba(195,173,255,0.28);box-shadow:0 42px 120px rgba(7,4,24,0.6)">
+<div class="slide" style="background:linear-gradient(160deg,#171b31 0%,#1b2140 55%,#213051 100%);color:#f6f3ff;font-family:'Poppins', Arial, sans-serif;padding:208px 128px 128px;display:flex;flex-direction:column;gap:56px">
+<a href="../shared/img/dashboard-traces-dark.png" data-preview-image aria-label="Enlarge the Aspire dashboard screenshot" style="position:absolute;left:952px;top:344px;width:840px;height:525px">
+<img src="../shared/img/dashboard-traces-dark.png" alt="Aspire dashboard showing distributed traces across services" style="width:840px;height:525px;object-fit:cover;border-radius:24px;border:1px solid rgba(195,173,255,0.28);box-shadow:0 42px 120px rgba(7,4,24,0.6)">
+</a>
+<p style="position:absolute;left:952px;top:893px;font-size:24px;color:#c3adff">Select the dashboard to enlarge · Esc to return</p>
 <img src="../shared/img/aspire-logo-light-horizontal.png" alt="Aspire" style="position:absolute;left:128px;top:80px;width:226px;height:56px;object-fit:contain">
 <h2 style="font-size:72px;font-weight:600;letter-spacing:-2px;line-height:1.08">Aspire for AI dev</h2>
 <div style="display:flex;flex-direction:column;gap:40px;width:740px">
@@ -507,41 +510,27 @@
 </section>
 
 <section id="thanks" data-transition="fade">
-<div class="slide" style="background:linear-gradient(160deg,#171b31 0%,#1b2140 55%,#213051 100%);color:#f6f3ff;font-family:'Poppins', Arial, sans-serif;padding:208px 128px 128px;display:flex;flex-direction:column;justify-content:center;gap:48px"><div class="ring" style="position:absolute;left:1180px;top:-90px;width:1080px;height:1080px;background:transparent;border:1px solid rgba(195,173,255,0.28);border-radius:50%"></div>
-<div class="ring" style="position:absolute;left:1380px;top:90px;width:720px;height:720px;background:transparent;border:1px solid rgba(195,173,255,0.28);border-radius:50%"></div>
-<img src="../shared/img/aspire-hero.png" alt="" style="position:absolute;left:1260px;top:320px;width:520px;height:400px;object-fit:contain">
+<div class="slide closing-slide" style="background:linear-gradient(160deg,#171b31 0%,#1b2140 55%,#213051 100%)">
 <img src="../shared/img/aspire-logo-light-horizontal.png" alt="Aspire" style="position:absolute;left:128px;top:80px;width:226px;height:56px;object-fit:contain">
-<h1 style="font-size:144px;font-weight:600;letter-spacing:-5px;line-height:1">Thank you</h1>
-<p style="font-size:36px;line-height:1.4;color:#cdc7e8;width:1000px">Now go let an agent build your next agent.</p>
-<div style="display:flex;gap:80px;padding:24px 0 0 0">
-<div style="display:flex;flex-direction:column;gap:6px"><p style="font-family:'Fira Code', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#c3adff">Docs</p><p style="font-size:32px;font-weight:500">aspire.dev</p></div>
-<div style="display:flex;flex-direction:column;gap:6px"><p style="font-family:'Fira Code', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#c3adff">Socials</p><p style="font-size:32px;font-weight:500">@aspiredotdev</p></div>
-<div style="display:flex;flex-direction:column;gap:6px"><p style="font-family:'Fira Code', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#c3adff">Maddy</p><p style="font-size:32px;font-weight:500">@maddymontaquila</p></div>
-<div style="display:flex;flex-direction:column;gap:6px"><p style="font-family:'Fira Code', 'Courier New', monospace;font-size:24px;letter-spacing:2px;text-transform:uppercase;color:#c3adff">Tommaso</p><p style="font-size:32px;font-weight:500">@tommasodotNET</p></div>
+<div class="closing-layout">
+<div class="closing-content">
+<h1>Thank you</h1>
+<p class="closing-tagline">Now go let an agent build your next agent.</p>
+<div class="closing-contacts">
+<div class="closing-contact"><p class="closing-contact-label">Docs</p><p class="closing-contact-value">aspire.dev</p></div>
+<div class="closing-contact"><p class="closing-contact-label">Socials</p><p class="closing-contact-value">@aspiredotdev</p></div>
+<div class="closing-contact"><p class="closing-contact-label">Maddy</p><p class="closing-contact-value">@maddymontaquila</p></div>
+<div class="closing-contact"><p class="closing-contact-label">Tommaso</p><p class="closing-contact-value">@tommasodotNET</p></div>
 </div>
-<p style="font-size:28px;color:#9c97b8">Please rate this session in the Techorama app.</p>
+<p class="closing-review-prompt">Scan to review this session.</p>
+</div>
+<img class="closing-review-qr" src="../shared/img/agents-review-qr.png" alt="SpreaView review QR code for Use agents to build agents with Aspire + Microsoft Agent Framework">
+</div>
 </div>
 <aside class="notes">Thank everyone, remind them to rate the session, and invite them to come find us with their agent questions. Flip back to Resources if Q&amp;A runs long.</aside>
 </section>
 </div>
 </div>
-<script src="../shared/reveal/reveal.js"></script>
-<script src="../shared/reveal/plugin/notes/notes.js"></script>
-<script>
-Reveal.initialize({
-  width: 1920,
-  height: 1080,
-  margin: 0,
-  minScale: 0.1,
-  maxScale: 3,
-  center: false,
-  hash: true,
-  controls: false,
-  progress: true,
-  transition: 'fade',
-  backgroundTransition: 'fade',
-  plugins: [ RevealNotes ]
-});
-</script>
+<script type="module" src="../shared/deck.js"></script>
 </body>
 </html>

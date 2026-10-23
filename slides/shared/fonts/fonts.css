@@ -5,3 +5,5 @@
 @font-face { font-family: 'Poppins'; font-style: normal; font-weight: 700; font-display: swap; src: url('poppins-latin-700-normal.woff2') format('woff2'); }
 @font-face { font-family: 'Fira Code'; font-style: normal; font-weight: 400; font-display: swap; src: url('fira-code-latin-400-normal.woff2') format('woff2'); }
 @font-face { font-family: 'Fira Code'; font-style: normal; font-weight: 600; font-display: swap; src: url('fira-code-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'DS Wallau'; font-style: normal; font-weight: 400; font-display: swap; src: url('ds-wallau-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Alegreya'; font-style: normal; font-weight: 400 900; font-display: swap; src: url('alegreya-variable-normal.woff2') format('woff2'); }

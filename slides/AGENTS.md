@@ -11,10 +11,13 @@ Instructions for any coding agent (Copilot, Claude Code, Codex, Cursor…) editi
 | `templates/index.html` | A runnable gallery deck: one example of every slide layout, ready to copy |
 | `docs/design-guidelines.md` | Brand and layout rules (colors, type scale, spacing, components, voice) |
 | `docs/brand/tokens.json` | Aspire design system tokens (source of truth for colors and type) |
-| `shared/` | reveal.js 5.1.0, fonts, images and `deck.css`, shared by every deck |
+| `shared/deck.js` | Shared Reveal.js initialization, npm imports, image previews and motion preferences |
+| `shared/` | Local fonts, images and `deck.css`, shared by every deck |
 | `index.html` | Landing page that links both decks |
 
-Everything is vendored. Do not add CDN links, npm dependencies or a build step; the decks must keep working offline on conference wifi.
+The repository root owns the npm manifest, lockfile and Vite configuration. Build tooling and npm dependencies are allowed. Use the existing Vite multi-page build rather than copying library distributions into `shared/` or introducing a second build system. Keep dependency changes intentional and commit the lockfile with them.
+
+The **built decks must present without an internet connection**. Bundle runtime dependencies, fonts and images; do not depend on a CDN at presentation time. External resource links are fine. `npm run build` creates `dist/`, which can be served locally or deployed to a static host, including a repository subpath. Do not edit or commit generated `dist/` files.
 
 ## How a slide is built
 
@@ -33,10 +36,15 @@ Every slide is one `<section>` inside `.slides`, holding exactly one `.slide` di
 
 Rules:
 
-- The canvas is fixed at **1920 × 1080**. reveal.js scales it to the screen; never use `vw`, `vh`, `%` font sizes or media queries.
+- The canvas is fixed at **1920 × 1080**. Reveal.js scales it to the screen; never use `vw`, `vh`, `%` font sizes or responsive layout media queries. Accessibility queries such as `prefers-reduced-motion` are allowed.
 - **Margins:** `padding:208px 128px 128px` on content slides (the logo sits at top 80px, left 128px). The usable area is 1664 × 744.
-- Keep styles inline on the slide. Only put a rule in `shared/deck.css` if it applies to every slide in every deck.
-- Every slide shows the Aspire logo top-left at the same position, except where a template omits it.
+- Keep one-off composition styles inline. Put reusable components, typography, accessibility and shared slide rules in `shared/deck.css`; avoid duplicating shared styling across decks.
+- Every deck loads `<script type="module" src="../shared/deck.js"></script>`. Keep Reveal configuration and plugin imports there rather than repeating initialization per page.
+- Use native `.fragment` elements for deliberate, click-to-reveal builds. Group related arrows and content with the same `data-fragment-index`; keep the first comparison or process step visible on arrival. Avoid decorative autoplay, and preserve instant state changes for reduced-motion users.
+- For a dashboard image that needs an enlarged view, wrap its `<img>` in an accessible `<a href="..." data-preview-image aria-label="...">`. The shared setup resolves the preview URL from the bundled image. Escape returns to the slide.
+- Each talk starts with the Techorama opener (`#techorama`), then its conference title (`#cover`), then the speaker slide. Use the original template artwork in `shared/img/techorama-*.png`; keep the session text editable in HTML. These two slides intentionally use the conference branding, not an Aspire logo overlay.
+- Conference titles use the template's local DS Wallau and Alegreya fonts; keep their license notices in `public/font-licenses/` with deployed builds. Closing slides use the matching session review image (`agents-review-qr.png` or `aspireify-review-qr.png`) at its original aspect ratio; do not substitute the other session's QR.
+- Every other slide shows the Aspire logo top-left at the same position, except where a template omits it.
 - Slide `id`s are used in URLs (`#/my-slide`). Keep them short, lowercase and unique within a deck, and do not rename existing ones.
 - Speaker notes go in `<aside class="notes">`. Press `S` while presenting to see them.
 - Icons are inline Lucide SVGs (`viewBox="0 0 24 24"`, `stroke="currentColor"`, `stroke-width="1.8"`, no fill). Copy one from an existing slide, or take the path from the Lucide icon set. Never use emoji as icons.
@@ -54,12 +62,17 @@ Rules:
 
 ## Checking your work
 
+From the **repository root**:
+
 ```sh
-npx serve .
+npm ci
+npm run dev
+npm run build
+npm run preview
 ```
 
-Run that from the `slides/` folder, open the deck, step through every slide you touched, and check that nothing overflows the 1920 × 1080 frame or overlaps the logo. Press `Esc` for the overview grid.
+Use the development server while editing, then inspect the production preview before finishing. Step through every changed slide and fragment in both directions; check that nothing overflows the 1920 × 1080 frame or overlaps the logo. Verify fonts, images, speaker notes and image previews resolve from the build. Press `Esc` for the overview grid. Do not use a plain file server on the source folder: npm imports require Vite.
 
-## Where the decks come from
+## Source of truth
 
-Both decks were designed as Claude Slides artifacts using the Aspire Design System and exported here. If you edit the HTML directly, the Slides versions will be out of date; that's fine, just tell Maddy so nobody re-exports over your changes.
+The HTML decks, shared styles and shared Reveal setup in this repository are the source of truth. Edit them directly and rebuild with Vite; do not replace them with an external slide export.
